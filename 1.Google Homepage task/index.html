@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Homepage</title>
+    <style>
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            gap: 20px;
+            padding-left: 20px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        .menu-button {
+            display: grid;
+            grid-template-columns: repeat(3, 10px);
+            grid-template-rows: repeat(3, 10px);
+            gap: 1px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            
+        }
+
+        .menu-button div {
+            width: 5px;
+            height: 5px;
+            background-color: black;
+            border-radius: 50%;
+        }
+
+        .profile-icon {
+            width: 40px;
+            height: 40px; 
+            border-radius: 50%;
+            overflow: hidden; 
+            border: 2px solid #ccc; 
+        }
+
+        .profile-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image_tab{
+            display: flex;
+            justify-content: center;
+        }
+        .image{
+            background-color: black;
+            border-radius: 50px;
+            height: 200px;
+        }
+
+        .search_first_container{
+            display: flex;
+            justify-content: center;
+        }
+        
+        .first_search{
+            cursor: pointer;
+            border-radius: 50px;
+            border-style: double;
+            height: 40px;
+            width: 1200px;
+            padding-left: 30px;
+        }
+
+        .search_second_container{
+            display: flex;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .second_search{
+            cursor: pointer;
+            height: 50px;
+            width: 600px;
+            border-radius: 50px;
+            border-style: double;
+            padding-left: 30px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <footer>
+
+    <div class="search_first_container">
+        <input class="first_search" type="search" placeholder="Type Google or a URL" >
+    </div>
+
+    <div class="container">
+        <h4>Gmail</h4>
+        <h4>Images</h4>
+        <a class="search_lab" aria-label="Search Labs" href="https://labs.google.com/search?source=ntp&amp;authuser=0" target="_top" role="button" tabindex="0"> 
+        <svg class="gb_g" focusable="false" height="24px" viewBox="0 -960 960 960" width="24px"> <path d="M209-120q-42 0-70.5-28.5T110-217q0-14 3-25.5t9-21.5l228-341q10-14 15-31t5-34v-110h-20q-13 0-21.5-8.5T320-810q0-13 8.5-21.5T350-840h260q13 0 21.5 8.5T640-810q0 13-8.5 21.5T610-780h-20v110q0 17 5 34t15 31l227 341q6 9 9.5 20.5T850-217q0 41-28 69t-69 28H209Zm221-660v110q0 26-7.5 50.5T401-573L276-385q-6 8-8.5 16t-2.5 16q0 23 17 39.5t42 16.5q28 0 56-12t80-47q69-45 103.5-62.5T633-443q4-1 5.5-4.5t-.5-7.5l-78-117q-15-21-22.5-46t-7.5-52v-110H430Z"></path> </svg>  </a>
+        <div class="menu-button">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="profile-icon">
+            <img src="./assets/download.jpeg">
+        </div>
+    </div>
+</footer>
+
+<div class="image_tab">
+    <a href="https://www.netflix.com/in/">
+        <img class="image" src="./assets/download (1).png">
+    </a>
+</div>
+
+<div class="search_second_container">
+    <input class="second_search" type="search" placeholder="Search google or type a URL">
+</div>
+
+</body>
+</html>
+
