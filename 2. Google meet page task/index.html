@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Meet Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #3c4043;
+      }
+
+      .display {
+        width: 1050px;
+        padding: 5px;
+      }
+
+      .box {
+        margin: 2.5px;
+        position: relative;
+      }
+
+      div.box {
+        display: inline;
+      }
+
+      .size {
+        height: 200px;
+        width: 250px;
+        object-fit: cover;
+        margin-bottom: 5px;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+
+      .sidebar {
+        height: 650px;
+        width: 350px;
+        background-color: white;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .sidebar_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .people_text {
+        font-size: 20px;
+        color: #3c4043;
+      }
+
+      .cross_mark {
+        font-size: 18px;
+        cursor: pointer;
+      }
+
+      .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 30px;
+        border-radius: 20px;
+        background-color: rgb(82, 203, 244);
+        margin-top: 10px;
+        margin-left: -10px;
+        cursor: pointer;
+        border: transparent;
+      }
+
+      .search-container {
+        position: relative;
+        margin-top: 10px;
+        margin-left: -10px;
+      }
+
+      .search-container i {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #888;
+      }
+
+      .search {
+        border-radius: 10px;
+        border-color: whitesmoke;
+        border-style: double;
+        height: 40px;
+        width: 300px;
+        padding-left: 40px;
+        cursor: pointer;
+        box-sizing: border-box;
+      }
+
+      .fas {
+        margin-right: 15px;
+      }
+
+      .text {
+        margin-top: 20px;
+        color: #888;
+      }
+
+      .another_box {
+        height: 420px;
+        width: 330px;
+        margin-left: -10px;
+        border-bottom: transparent;
+        border-color: whitesmoke;
+        border-style: double;
+      }
+      .name {
+        position: absolute;
+        bottom: 10px;
+        left: 15px;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+        z-index: 10;
+      }
+
+      .btn_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+        margin: 20px 0;
+        margin-top: -150px;
+      }
+
+      .btn {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-color: rgb(85, 85, 85);
+        border: transparent;
+      }
+
+      .end_button {
+        height: 35px;
+        width: 50px;
+        border-radius: 40%;
+        background-color: red;
+        border: transparent;
+        cursor: pointer;
+      }
+
+      .end_button .fa {
+        transform: rotate(-135deg);
+      }
+
+      .mute_button {
+        color: white;
+        cursor: pointer;
+      }
+
+      .dot_button {
+        font-size: 18px;
+      }
+
+      .fa-smile {
+        border-color: white;
+        font-size: 20px;
+      }
+
+      .second_btn {
+        margin-right: -35px;
+        border-radius: 38%;
+        height: 38px;
+      }
+
+      .fa-greater-than {
+        transform: rotate(-90deg);
+        font-size: 11px;
+      }
+
+      .text_container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 40px;
+        padding: 30px;
+      }
+
+      .popup {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        display: none;
+        z-index: 1000;
+      }
+
+      .popup.active {
+        display: block;
+      }
+
+      .muted{
+        color: white;
+      }
+
+      .unmuted .fa-microphone{
+        color: white;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="display">
+      <div class="box">
+        <img class="size" src="./assets/image 1.webp" /><span class="name"
+          >Akash</span>
+      </div>
+      <div class="box">
+        <img class="size" src="./assets/image 2.jpeg" /><span class="name"
+          >Akash</span>
+      </div>
+      <div class="box">
+        <img class="size" src="./assets/image 3.jpeg" /><span class="name"
+          >Akash</span>
+      </div>
+      <div class="box">
+        <img class="size" src="./assets/image 4.jpeg" /><span class="name"
+          >Akash</span>
+      </div>
+      <div class="box">
+        <img class="size" src="./assets/image 5.webp" /><span class="name"
+          >Akash</span>
+      </div>
+      <div class="box">
+        <img class="size" src="./assets/image 6.webp" /><span class="name"
+          >Akash</span>
+      </div>
+      <div class="box">
+        <img class="size" src="./assets/image 7.webp" /><span class="name"
+          >Akash</span>
+      </div>
+      <div class="box">
+        <img class="size" src="./assets/image 8.webp" /><span class="name"
+          >Akash</span>
+      </div>
+      <div class="box">
+        <img class="size" src="./assets/image 9.jpeg" /><span class="name"
+          >Akash</span>
+      </div>
+      <div class="box">
+        <img class="size" src="./assets/image 10.avif" /><span class="name"
+          >Akash</span>
+      </div>
+      <div class="box">
+        <img class="size" src="./assets/image 11.avif" /><span class="name"
+          >Akash</span>
+      </div>
+      <div class="box">
+        <img class="size" src="./assets/image 12.avif" /><span class="name"
+          >Akash</span>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="sidebar_header">
+        <div class="people_text">People</div>
+        <span class="cross_mark">&#10005;</span>
+      </div>
+      <button class="button"><i class="fas fa-user-plus"></i>Add People</button>
+
+      <div class="search-container">
+        <i class="fa fa-search"></i>
+        <input class="search" type="search" placeholder="Search for people" />
+      </div>
+
+      <div class="text">In meeting</div>
+      <div class="class_name">
+        <div><input class="another_box" type="search" /></div>
+      </div>
+    </div>
+
+    <div class="text_container" style="color: white">
+      C11 | I'm an Engineer | VSS
+    </div>
+
+    <div class="btn_container">
+      <button class="mute_button btn second_btn">
+        <i class="fas fa-greater-than"></i>
+        <button id="mic-button" class="mute_button btn">
+          <i class="fa fa-microphone" style="font-size: 15px"></i>
+        </button>
+      </button>
+      <button class="mute_button btn">
+        <i class="fa fa-video-camera"></i>
+      </button>
+      <button class="mute_button btn">
+        <i class="fa fa-cc" style="font-size: 18px"></i>
+      </button>
+      <button class="mute_button btn"><i class="fa fa-smile"></i></button>
+      <button class="mute_button btn"><i class="fa fa-arrow-up"></i></button>
+      <button class="raised-hand mute_button btn">
+        <i class="fa fa-hand-paper" style="font-size: 18px"></i>
+      </button>
+      <button  class="mute_button btn">
+        <i class="dot_button fa fa-ellipsis-v"></i>
+      </button>
+      <button class="end_button mute_button btn">
+        <i class="fa fa-phone-alt"></i>
+      </button>
+    </div>
+
+    <div class="popup" id="popup">You have raised your hand!</div>
+  </body>
+</html>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('.raised-hand').addEventListener('click', function () {
+            const popup = document.getElementById('popup');
+            
+            popup.classList.add('active');
+            setTimeout(() => {
+                popup.classList.remove('active');
+            }, 3000);
+        });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        let isMuted = false;
+        const micButton = document.getElementById('mic-button');
+
+        micButton.addEventListener('click', function () {
+            isMuted = !isMuted;
+            if (isMuted) {
+                micButton.classList.add('muted');
+                micButton.querySelector('.fa-microphone').classList.replace('fa-microphone', 'fa-microphone-slash');
+            } else {
+                micButton.classList.remove('muted');
+                micButton.querySelector('.fa-microphone-slash').classList.replace('fa-microphone-slash', 'fa-microphone');
+            }
+        });
+    });
+</script>
